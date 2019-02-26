@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/config.js"></script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/main.css"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>IceLand</title>
+
+</head>
+<body>
+<div id="map"></div>
+<div id="left_panel">
+    <div id="my-card">
+        <div class="card">
+            <div class="card-content">
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="path1" type="text" data-length="10">
+                                <label for="path1">Google photo path #1</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="path2" type="text" data-length="10">
+                                <label for="path2">Google photo path #2</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="path3" type="text" data-length="10">
+                                <label for="path3">Google photo path #3</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="textarea2" class="materialize-textarea" data-length="400"></textarea>
+                                <label for="textarea2">Textarea</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <a class="my-right btn-floating btn-large waves-effect waves-light red"><i class="material-icons" onclick="addNewCard()">add</i></a>
+            </div>
+        </div>
+    </div>
+<div id="photo-card">
+    <div class="carousel carousel-slider center">
+        <!--<a class="carousel-item" href="#one!"><img  class="img" id="photo1" src="https://lh3.googleusercontent.com/lfPDwZP8ppU55gU4spusUgP9-gZ0k_J0fdjvwnRfiEhaZmZWyOwGXBq6JVT1NtRZtELKmk9OV0d5ze2A00xCqnA9FoW03JctH_g781cq2rejxlZBoqmrMr_BDGwVzgNvsSbr39ZHGgwSXDhiFNAZRO3SAcYXiAm5qmLPndS04CQtzlBNr4iYBIFYkwcfSfJb7ipHGeDNazXBQuy9gOjNslWgQpdRtBl32VO7wyFOuvms6uPfAxjQis784PU2M-yBQrs_BVQU-1gglIj-SwR8jrfdcMKqx2WYp2KPUZX2pRixbBiBzyizMMrTDCnLntMAv7qrkKumyAt7a0uyfCkPd4BcLS9RUS-g-9dgvDeVcqdGl48z&#45;&#45;_D3vk_JZMvTaKhlEQpGF3D0O7htNnDWjlwY9OFiHpr5xu8ek_Bp1Zmg9BIPvZfFS-n9O9w_wWW18bo0EIR08ge62-1OzTIn6LJP-pmQ6_jzUuy021rNq9dcmeRTUOBfvoOBd5Hsg3FIUUe6XOxquxpMdgCYpeX3_RvduVs44JmDeCCkf5A5oeY_hquwIrv08YnmBdH9PEBJDNGymyh_A3j6UFfNQ39KS-dZ5414XM9KluZEL-zvupXrXO66CVVV4ImFe5DcMTOU673B_MkBqB1EictjKd8kCAhOtAl_OnE4KmXjKzO3BCtUGlJwpiogOth3KmzQCCFCo_fgeAwC2DiY_APyFfwdtRUY6E=w1052-h789-no"></a>
+        <a class="carousel-item" href="#two!"><img class="img" id="photo2" src="https://lh3.googleusercontent.com/zZ7loaAyCF5-1jxvsD06jVZ2ZbZ_2UDIgdat_zKhVlj7bMONSTuPr8g8oenUGHizXEEOsHeZ5CXuTzAdq5GS6M4xoi1yIe9fmZ-JJMJRSvTMcgvDEDpjr5MokCxsqvhzpsIEZjLX1D_1sSt0Zp44lIIEV2m9iDFp7xKhxZr_WTqYEMlMX5HwcGx7vjvINcSJr4EJBt3yc71UuLhxeSIyrvtpYf6fw73HeYCEl2kjh2B2CWbOQ53leqFGg-0dxEwR8mbFJJBiThRs0v8aipHJHD4uf4gWcdBitw1GNnZtGmuls4VY8PUfkss6NAMVGXYz2rvz0zvcyG5TtVT-pZTNJTVlfjf6qro9PfaSHFw-SYeMel1ZMZDfcDvQwP0KDPK-DD1dWEynVrqFI4nU7SGvnOc2NzcWOXMBhXeTB_Gyf7B0hm5_v4AneNVFYIi3II92SXpCghETF9iDYd4DXwfFDZFMyqEkr0FafDIBRMb1XtDN5G6RCZDabJfY0Hu1DsVbQyyx0ePyQptcKV8SIrbOBvzRv5QpEHZd6iU8QFTkAwz1VLQaXG4f2KYbgqi_6diwa2DfBzMgSdltebeB5G4KCzIpvGz0QsCaBTclEShwA0fqyN3guXvwWHCN17AnGwCGTgEfP_l87wtse8KJAIAz7Dcldo11nMdW8s0R4hxAAifnrAS-aYbHUkvK4xjZu8ZcnSBa0-mI6Dgp7JbyhVOxhxA=w1240-h697-no"></a>
+        <a class="carousel-item" href="#three!"><img class="img" id="photo3" src="https://lh3.googleusercontent.com/dADB_tTU-NODfc5-ZRwKKVcszYrSywPZuCpp7cY4S01BChYfja61ayQIESmorCdtRSB1tBAUIwP7hZuaWqLxBPdPTH1BgNZIg9jIjBRSHx-KtK-sLA7B35ej0pf01XRnMVFn91IE0z7YiKa7qpgrC9qgXW88o69isNM9UkioyuGAz-WGuT_X8u287-2KZprTKvuWpCCTvLD0iLRMSbLpA2NdAjr-gKjmfBonDe6oAS-7WH8IFjdIBCe678Df31H31YRewPksu1XobwRGCNinZoRo4soItV1XW4jYqiD_VmVPT3l-N6LRRZEseYvyG9bQG4_zQ-5_P9ryB3yH6jxoWjxvHQXzQWO87EbZcou4a0eNfkpIhWWrJQ0tBuqN1DU9czJyyvT0LSPVw4V4mMmumSg1xZ3CHWOQT7OwvyST31t3sdfQofR2k1q2RToVKpa82urvU3kP7rXKWHP8nrXC4b2GxNDxyCqpEnbk13OZ_gibD-QGQw7KFACPvE0Faceg4Yk8wtRXVu3QuhVRfhaOtDdWv-zosi_wbNtf43eVGhjJztiB34U2M2rhBehrTsyjwuw24txcbAPQ6-0ebs-_Je1dgbSH5pLkr7b6pmaiEa40WKxXv6bEKmgVXkqrv4lJ4NR03cjES-l71cIVj-hzVqPaxQ3vijlGgfYFZ_LHxE4kqQjcStGi7tk0BRkRxp83vlYn_9pOUZchxSZoQIOctqA=w638-h338-no">
+        --><!--<a class="carousel-item" href="#one!"><img id="photo1" src=""></a>
+        <a class="carousel-item" href="#two!"><img id="photo2" src=""></a>
+        <a class="carousel-item" href="#three!"><img id="photo3" src=""></a>-->
+            <div class="carousel-item" href="#one!" id="one">
+                <img  class="img" id="photo1" src="./nophoto.jpg">
+            </div>
+            <div class="carousel-item" href="#two!" id="two">
+                <img  class="img" id="photo2" src="./nophoto.jpg">
+            </div>
+            <div class="carousel-item" href="#three!" id="three">
+                <img  class="img" id="photo3" src="./nophoto.jpg">
+            </div>
+    </div>
+    <h3 class="center-align">Описание</h3>
+    <h5 class="center-align" id="description"></h5>
+</div>
+</div>
+
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtJsuDvrKcBeURzwglw1kfPDdOyEAEtPU&callback=initMap"
+        async defer></script>
+</body>
+</html>

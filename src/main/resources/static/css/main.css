@@ -1,0 +1,57 @@
+#map {
+    height: 97%;
+    width: 67%;
+    position: absolute;
+    left: 33%;
+    margin: 0;
+    padding: 0;
+}
+
+#left_panel{
+    height: 97%;
+    width: 33%;
+    position: absolute;
+    background: whitesmoke;
+    left: 0px;
+    margin: 0;
+    padding: 0;
+}
+#my-card{
+    height: 70%;
+    width: 100%;
+    position: absolute;
+    left: 0%;
+    top: 28%;
+    display: none;
+    /*background: whitesmoke;
+    border-radius: 2%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #26a69a;*/
+}
+img{
+    min-height: 100%;
+    min-width: 100%;
+    width: 600px;
+    height: 250px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+.my-input-field{
+    position: absolute;
+    left: 10%;
+    top: 8%;
+    width: 140%;
+}
+.my-right{
+    position: fixed;
+    top: 82%;
+    left: 25%;
+}
+.hidden{
+    position: absolute;
+    height: 0;
+    width: 0;
+    display: none;
+}
